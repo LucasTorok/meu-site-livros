@@ -5,11 +5,17 @@ const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (password !== confirmPassword) {
+            setMessage("As senhas não coincidem");
+            return;
+        }
         
         const response = await fetch("http://localhost:5000/register", {
             method: "POST",
@@ -22,7 +28,6 @@ const Register = () => {
         const data = await response.json();
         if (response.ok) {
             setMessage("Usuário registrado com sucesso!");
-            setTimeout(() => navigate("/login"), 2000);
         } else {
             setMessage(data.error || "Erro ao registrar usuário");
         }
@@ -52,6 +57,13 @@ const Register = () => {
                     placeholder="Senha"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Confirme a Senha"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                 />
                 <button type="submit">Registrar</button>
