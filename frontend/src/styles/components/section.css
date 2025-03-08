@@ -1,0 +1,22 @@
+/* Header section */
+.header-section {
+    @apply relative my-10 w-full !max-w-[1440px] overflow-hidden m-auto;
+}
+
+.subtitle-section {
+    @apply text-base text-[#7A7A7A] w-full text-center mb-2.5;
+}
+
+.title-section {
+    @apply w-full flex gap-10 justify-center items-center text-[#222222] text-5xl before:content-[''] before:absolute before:w-full before:h-0.5 before:bg-black/30 before:mt-4;
+}
+
+/* Section */
+.content-section {
+    @apply flex max-w-[1440px] m-auto;
+}
+
+/* General */
+.description {
+    @apply text-base text-[#7A7A7A] leading-[220%];
+}

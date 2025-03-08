@@ -1,0 +1,14 @@
+/* Hero Section */
+.section.hero .hero-section-container {
+    @apply mt-10 mb-20 gap-20 justify-center items-center;
+}
+
+/* About Us Section */
+.section.aboutus .about-us-container{
+    @apply gap-[4.375rem] justify-between items-start pb-20 border-b border-black/30;
+}
+
+/* Highlights Section */
+.section.highlights .highlight-container {
+    @apply gap-[5.5rem] justify-between items-start;
+} 
