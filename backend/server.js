@@ -13,12 +13,14 @@ app.use(cors());
 app.use(express.json());
 
 // Conectar ao banco de dados
-// connectDB();
+connectDB();
 
 // Routes
 app.use("/api", booksRoutes);
-// app.use("/auth", authRoutes);
+app.use("/auth", authRoutes);  // Atualize aqui
 
 // Iniciar servidor
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
+const PORT = process.env.PORT || 3300;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
